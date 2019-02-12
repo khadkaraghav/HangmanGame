@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Let's play hangman");
 
         ArrayList<String> secretWords = new ArrayList<String>();
-        Collections.addAll(secretWords, "hen", "preposition", "insta", "face");
+        Collections.addAll(secretWords, "hen", "insta", "face", "javascript");
         Collections.shuffle(secretWords);
         String gameWord = secretWords.get(0);
 
@@ -25,35 +25,36 @@ public class Main {
         }
 
         String guess = "";
-        String string ="";
+        String newGuessedWord = "";
 
-        while (!string.equals(gameWord)) {
+
+        while (!newGuessedWord.equals(gameWord)) {
 
             Scanner reader = new Scanner(System.in);
 
-            int totalChance = 6;
-
             System.out.println("\nEnter your guess");
             guess = reader.next();
-
 
             if (gameWord.contains(guess)) {
 
                 builder.replace(gameWord.indexOf(guess), gameWord.indexOf(guess) + 1, guess);
 
-                 string = builder.toString();
+                newGuessedWord = builder.toString();
 
-                System.out.println(string);
+                System.out.println(newGuessedWord);
 
+            } else {
+                System.out.println("WRONG. TRY AGAIN");
             }
 
-            if (string.equals(gameWord)) {
+            if (newGuessedWord.equals(gameWord)) {
 
-                System.out.println("You've won");
+                System.out.println("Congratulations. You've won. The word was " + gameWord);
             }
         }
     }
 }
+
 
 
 
