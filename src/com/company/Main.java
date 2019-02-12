@@ -27,33 +27,41 @@ public class Main {
         String guess = "";
         String newGuessedWord = "";
 
-
+        int totalChance = 6;
         while (!newGuessedWord.equals(gameWord)) {
-
             Scanner reader = new Scanner(System.in);
-
             System.out.println("\nEnter your guess");
             guess = reader.next();
-
             if (gameWord.contains(guess)) {
-
                 builder.replace(gameWord.indexOf(guess), gameWord.indexOf(guess) + 1, guess);
-
                 newGuessedWord = builder.toString();
-
                 System.out.println(newGuessedWord);
+            } else if (!gameWord.contains(guess)) {
+                while (totalChance > 0) {
+                    System.out.println("YOU HAVE " + totalChance + " chances");
+                    totalChance--;
+                    if (totalChance == 0) {
+                        System.out.println("YOU HAVE BEEN HANGED");
+                    }
+                    if (newGuessedWord.equals(gameWord)) {
+                        System.out.println("Congratulations. You've won. The word was " + gameWord);
 
-            } else {
-                System.out.println("WRONG. TRY AGAIN");
-            }
-
-            if (newGuessedWord.equals(gameWord)) {
-
-                System.out.println("Congratulations. You've won. The word was " + gameWord);
+                    }
+                    break;
+                }
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
