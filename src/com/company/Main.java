@@ -1,11 +1,10 @@
 package com.company;
 
-import javafx.collections.ArrayChangeListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
-import java.util.*;
+
 
 public class Main {
 
@@ -14,55 +13,52 @@ public class Main {
         System.out.println("Let's play hangman");
 
         ArrayList<String> secretWords = new ArrayList<String>();
-
-        Collections.addAll(secretWords, "hangmans", "youtube", "instagram", "face");
-
+        Collections.addAll(secretWords, "hen", "preposition", "insta", "face");
         Collections.shuffle(secretWords);
-
         String gameWord = secretWords.get(0);
-        // System.out.println(gameWord);
 
-        StringBuilder builder = new StringBuilder(gameWord);
-
+        StringBuilder builder = new StringBuilder();
 
         for (int i = 1; i <= gameWord.length(); i++) {
-
             builder.append("-");
-
             System.out.print("_");
-
         }
 
-        int totalLife = 6;
+        String guess = "";
+        String string ="";
 
-        for (int i = 1; i < 7; i++) {
-
-            System.out.println("\nEnter your guess");
+        while (!string.equals(gameWord)) {
 
             Scanner reader = new Scanner(System.in);
 
-            String guess = reader.next();
+            int totalChance = 6;
 
-if (gameWord.contains(guess)){
-
-    int start =0; int end =0;
-
-    start = gameWord.indexOf(guess);
-
-    end = start + guess.length();
-
-    builder.replace(start,end,guess);
-
-    System.out.println(builder);
+            System.out.println("\nEnter your guess");
+            guess = reader.next();
 
 
+            if (gameWord.contains(guess)) {
 
-}
+                builder.replace(gameWord.indexOf(guess), gameWord.indexOf(guess) + 1, guess);
 
+                 string = builder.toString();
+
+                System.out.println(string);
+
+            }
+
+            if (string.equals(gameWord)) {
+
+                System.out.println("You've won");
+            }
         }
-
     }
 }
+
+
+
+
+
 
 
 
