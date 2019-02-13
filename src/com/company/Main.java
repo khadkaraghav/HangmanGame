@@ -27,7 +27,7 @@ public class Main {
         String guess = "";
         String newGuessedWord = "";
 
-        int totalChance = 6;
+        int totalChance = 5;
 
         while (!newGuessedWord.equals(gameWord)) {
 
@@ -46,10 +46,110 @@ public class Main {
                     System.out.println("WRONG");
                     System.out.println("YOU HAVE " + totalChance + " chances");
                     totalChance--;
+
+                    if (totalChance == 5) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |                      ");
+                        System.out.println("   |                        ");
+                        System.out.println("   |                       ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                    }
+
+                    if (totalChance == 4) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |            |                ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                    }
+
+                    if (totalChance == 3) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |            |   /            ");
+                        System.out.println("   |            | -/               ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                    }
+
+                    if (totalChance == 2) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |            |   /             ");
+                        System.out.println("   |            | -/                ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                    }
+
+                    if (totalChance == 1) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |      \\    |   /            ");
+                        System.out.println("   |        \\- | -/               ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                        System.out.println("   |                           ");
+                    }
+
+                    if (totalChance == 0) {
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |      \\    |   /            ");
+                        System.out.println("   |        \\- | -/               ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |             \\               ");
+                        System.out.println("   |               \\             ");
+                        System.out.println("   |                 --          ");
+
+
+                    }
+
                     if (totalChance == -1) {
                         System.out.println("YOU HAVE BEEN HANGED");
+                        System.out.println("   ____________");
+                        System.out.println("   |          _|_");
+                        System.out.println("   |         /   \\");
+                        System.out.println("   |        |     |");
+                        System.out.println("   |         \\_ _/");
+                        System.out.println("   |      \\    |   /            ");
+                        System.out.println("   |        \\- | -/               ");
+                        System.out.println("   |            |               ");
+                        System.out.println("   |           /  \\               ");
+                        System.out.println("   |          /     \\             ");
+                        System.out.println("   |       ---        ---          ");
                         System.exit(0);
+
                     }
+
 
                     break;
                 }
